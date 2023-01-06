@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import popularReducer from '../features/popular/popularSlice';
+import postListReducer from '../features/postList/postListSlice';
 
 export const store = configureStore({
   reducer: {
-    popular: popularReducer,
+    postList: postListReducer,
   },
 });

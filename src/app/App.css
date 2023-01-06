@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color:rgb(241, 238, 234);
+  background-color:rgb(215, 215, 215);
+  color: rgb(40, 40, 40);
 }
 
 .App-header {
@@ -8,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgb(208, 93, 93);
 }
 
 .App-main {
@@ -17,26 +19,20 @@
   justify-content: center;
 }
 
-.App-main span {
-  border: 1px solid rgb(255, 88, 91); 
-  color: rgb(255, 88, 91);
-}
-
 .postList {
-  max-width: 80%;
+  max-width: 70%;
 }
 
 .postList img, video {
   max-height: 520px;
   max-width: 90%;
-  /* margin-bottom: 20px; */
   border-radius: 5px;
 }
 
 .postList .itemPreview {
-  box-shadow:  5px 5px 15px #c7c4c4;
+  box-shadow:  5px 5px 15px #343030;
   background-color: rgb(249, 249, 249);
-  padding: 0.5ch 2ch;
+  padding: 1ch 4ch;
   margin: 1.5ch 1ch 2ch 1ch;
   border-radius: 5px;
 }

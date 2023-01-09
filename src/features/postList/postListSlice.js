@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const getPostList = createAsyncThunk(
     'postList/getPostList',
-    async (subreddit) => {
+    async (subreddit='popular') => {
         const response = await fetch(
             `https://www.reddit.com/r/${subreddit}.json`);
         const json = await response.json();
@@ -37,5 +37,6 @@ export const postListSlice = createSlice({
 
 export const getChildren = state => state.postList.postList.children;
 export const isLoading = state => state.postList.isLoadingPostList;
+export const failedToLoad = state => state.postList.failedToLoadPostList;
 
 export default postListSlice.reducer;

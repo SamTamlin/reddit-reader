@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(208, 93, 93);
+  background-color: rgb(220, 60, 60);
 }
 
 .App-main {
@@ -19,21 +19,12 @@
   justify-content: center;
 }
 
-.postList {
-  max-width: 70%;
+a:hover {
+  color:gray;
+}
+a {
+  color: rgb(40, 40, 40);
+  text-decoration: none;
 }
 
-.postList img, video {
-  max-height: 520px;
-  max-width: 90%;
-  border-radius: 5px;
-}
-
-.postList .itemPreview {
-  box-shadow:  5px 5px 15px #343030;
-  background-color: rgb(249, 249, 249);
-  padding: 1ch 4ch;
-  margin: 1.5ch 1ch 2ch 1ch;
-  border-radius: 5px;
-}
 

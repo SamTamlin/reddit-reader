@@ -1,0 +1,28 @@
+h2 a {
+    background-color: red;
+};
+
+.post {
+    max-width: 70%;
+};
+
+.postList {
+    max-width: 70%;
+  }
+
+
+  
+.postList, img, video {
+    max-height: 520px;
+    max-width: 90%;
+    border-radius: 5px;
+  }
+/*   
+.postList, .itemPreview {
+    box-shadow:  5px 5px 15px #343030;
+    background-color: rgb(249, 249, 249);
+    padding: 1ch 4ch;
+    margin: 1.5ch 1ch 2ch 1ch;
+    border-radius: 5px;
+  } */
+  

@@ -1,12 +1,9 @@
 body {
   margin: 0;
-  font-family: 'IBM Plex Sans', 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  text-align: center;
+  background-color:rgb(215, 215, 215);
+  color: rgb(40, 40, 40);
 }

@@ -20,20 +20,15 @@ export function PostList() {
         dispatch(getPostList(subreddit));
     }, [dispatch, subreddit]);
 
-    loadingPostList ? 
-        <p>Please Wait</p> : 
-        <p></p>;
-    failedToLoadPostList ? 
-        <p>Sorry failed to load, please retry</p> : 
-        <p></p>;
+    loadingPostList ? <p>Please Wait</p> : <p></p>;
+    
+    failedToLoadPostList ? <p>Sorry failed to load, please retry</p> : <p></p>;
     
     if(children !== undefined) {
         return (
             <div className='postList'>
-                <h2>
-                    {subreddit ? 
-                    `Subreddit: ${subreddit}` : 
-                    'Home'}
+                <h2 className='listTitle'>
+                    {subreddit ? `Subreddit: ${subreddit}` : 'Home'}
                 </h2>
                 {children.map((post) => (
                     <div className ='itemPreview' 
@@ -41,29 +36,30 @@ export function PostList() {
                         <h3>
                             <Link to={post.data.permalink}>
                                 {post.data.title}
-                            </Link> {post.data.thumbnail === 'nsfw'? <span>nsfw</span>: ''}
+                            </Link> {post.data.thumbnail === 'nsfw'? <span className='NSFW'>nsfw</span>: ''}
                         </h3>
-                        
+                        <p>score: {post.data.score}</p>
+                        <p><Link to={'/r/' + post.data.subreddit}>{post.data.subreddit_name_prefixed}</Link> • posted by: {`u\\${post.data.author}`}</p>
+                        <p><md-span>{post.data.selftext}</md-span></p>
                         {post.data.is_video ? 
                             <video controls >
                                 <source src={post.data.media.reddit_video.fallback_url}
                                     type={"video/mp4"}>
                                 </source>
                             </video> : ''}
+
                         {post.data.post_hint === 'image'?
                             <img src={post.data.url} alt={''}/> : ''}
 
                         {post.data.secure_media_embed.content !== undefined? 
                             <iframe 
                                 src={post.data.secure_media_embed.media_domain_url}
-                                height={post.data.secure_media_embed.height}
-                                width={post.data.secure_media_embed.width}
+                                Height={post.data.secure_media_embed.height}
+                                Width={post.data.secure_media_embed.width}
+                                allowFullScreen='true'
+                                
                                 >
                             </iframe> : ''}
-
-                        <p><Link to={'/r/' + post.data.subreddit}>{post.data.subreddit_name_prefixed}</Link> • posted by: {`u\\${post.data.author}`}</p>
-                        <p>score: {post.data.score}</p>
-                        <p><md-span>{post.data.selftext}</md-span></p>
                     </div>
                 ))};
             </div>

@@ -1,0 +1,56 @@
+.postTitle {
+  box-shadow:  3px 3px 10px #343030;
+  background-color: rgb(249, 249, 249);
+  padding: 1ch;
+  margin-top: 1.5ch;
+  /* margin-left: 6.75ch; */
+  border-radius: 5px; 
+}
+
+.postHeader {
+  box-shadow:  5px 5px 15px #343030;
+  background-color: rgb(249, 249, 249);
+  padding-top: 0.5ch;
+  /* padding-left: 4ch; */
+  /* padding-right: 4ch; */
+  padding-bottom: 2ch;
+  /* margin-top: 1ch; */
+  /* margin-left: 11ch; */
+  border-radius: 5px;  
+}
+
+  
+video, img, iframe {
+  border: #343030 solid 1px;
+  box-shadow:  1px 1px 5px #343030;
+  margin: 1ch;
+  max-height: 100ch;
+  max-width: 90%;
+  }
+
+.NSFW {
+  border:1px solid #FF585B;
+  color:#FF585B
+}
+
+.commentTitle {
+  box-shadow:  5px 5px 15px #343030;
+  background-color: rgb(249, 249, 249);
+  padding-top: 1ch;
+  padding-bottom: 1ch;
+  margin-top: 2ch;
+  border-radius: 5px;
+}
+
+.comments {
+  box-shadow:  5px 5px 15px #343030;
+  background-color: rgb(249, 249, 249);
+  padding-top: 0.5ch;
+  padding-left: 2ch;
+  padding-right: 2ch;
+  padding-bottom: 0.5ch;
+  margin-top: 1ch;
+  /* margin-left: 11ch; */
+  border-radius: 5px;  
+}
+  

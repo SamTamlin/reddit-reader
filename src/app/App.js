@@ -1,6 +1,7 @@
 import React from 'react';
-import PostList from '../features/postList/postList';
-import Post from '../features/post/Post';
+import PostList from '../pages/postList/postList';
+import Post from '../pages/post/Post';
+import {SubReddits} from '../features/subreddits/subReddits';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
@@ -12,6 +13,7 @@ function App() {
           <h1><Link to='/'>Reddit Reader</Link></h1>
         </header>
         <main className='App-main'>
+          <SubReddits />
           <Routes>
             <Route path='/'
                    element={<PostList />} />

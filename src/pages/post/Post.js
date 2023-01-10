@@ -1,4 +1,4 @@
-import React, {useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { getPost, 
          getHeader, 
@@ -37,7 +37,7 @@ export function Post() {
     if(header !== undefined) {
         return (
             <div className='post'>
-                <h2>
+                <h2 className='postTitle'>
                     {subreddit ? 
                     <Link to={`/r/${header.children[0].data.subreddit}`}>
                         Subreddit: {subreddit}
@@ -47,39 +47,46 @@ export function Post() {
                 <div className='postHeader' 
                      key={header.children[0].data.id}>
                     <h3>
-                        {header.children[0].data.title} {header.children[0].data.thumbnail === 'nsfw'? <span>nsfw</span>: ''}
+                        {header.children[0].data.title} {header.children[0].data.thumbnail === 'nsfw'? <span className='NSFW'>nsfw</span>: ''}
                     </h3>
-
+                    <p>score: {header.children[0].data.score}</p>
+                    <p>posted by: {`u\\${header.children[0].data.author}`}</p>
+                    <p><md-span>{header.children[0].data.selftext}</md-span></p>
                     {header.children[0].data.is_video ? 
                         <video controls >
                             <source src={header.children[0].data.media.reddit_video.fallback_url}
                                 type={"video/mp4"}>
                             </source>
                         </video> : ''}
+
                     {header.children[0].data.post_hint === 'image'?
                         <img src={header.children[0].data.url} alt={''}/> 
                         : ''}
                     
                     {header.children[0].data.secure_media_embed.content !== undefined? 
-                            <iframe 
-                                src={header.children[0].data.secure_media_embed.media_domain_url}
-                                height={header.children[0].data.secure_media_embed.height}
-                                width={header.children[0].data.secure_media_embed.width}
-                                >
-                            </iframe> : ''}
-                
-                    <p><Link to={'/' + header.children[0].data.subreddit}>
-                            {header.children[0].data.subreddit_name_prefixed}
-                        </Link> • posted by: {`u\\${header.children[0].data.author}`}</p>
-                    <p>score: {header.children[0].data.score}</p>
-                    <p><md-span>{header.children[0].data.selftext}</md-span></p>
+                        <iframe 
+                            src={header.children[0].data.secure_media_embed.media_domain_url}
+                            height={header.children[0].data.secure_media_embed.height}
+                            width={header.children[0].data.secure_media_embed.width}
+                            >
+                        </iframe> : ''}
                 </div>
                 
-                <h3>Comments</h3>
+                <h3 className='commentTitle'>Comments</h3>
                 {userComments.children.map((comment) => (
-                    <div className='commentHeader' 
+                    <div className='comments' 
                          key={comment.data.id}>
                         <p>{comment.data.body}</p>
+                        {comment.data.replies !== ''?
+                            <p>IT WORKS!</p>
+                        //     <div>
+                        //     {comment.data.replies.data.children.map((reply) => (
+                        //         <div className='comments'
+                        //             key={reply.data.id}>
+                        //             <p>{reply.data.body}</p>
+                        //         </div>
+                        //  ))}</div> 
+                        : <p>NOTHING TO SEE HERE!</p>}
                     </div>
                 ))}
             </div>

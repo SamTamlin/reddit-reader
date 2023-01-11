@@ -1,0 +1,26 @@
+.postHeader {
+    box-shadow:  5px 5px 15px #343030;
+    background-color: rgb(249, 249, 249);
+    padding-top: 0.5ch;
+    padding-bottom: 2ch;
+    border-radius: 5px;  
+}
+
+.postHeader video, .postHeader img, .postHeader iframe {
+    border: #343030 solid 1px;
+    box-shadow:  1px 1px 5px #343030;
+    margin: 1ch;
+    /* max-height: 70ch; */
+    max-width: 90%;
+    border-radius: 10px;
+}
+
+.postHeader .mdSpan {
+    max-height: 50ch;
+    overflow-y: scroll;
+  }
+  
+.NSFW {
+    border:1px solid #FF585B;
+    color:#FF585B
+}

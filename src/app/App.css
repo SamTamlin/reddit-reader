@@ -1,22 +1,27 @@
 .App-header {
+  position:fixed;
+  z-index: 1;
+  top:5px;
+  left: 5px;
+  right: 5px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  align-self: center;
   background-color: rgb(220, 60, 60);
-  margin: 5px;
   box-shadow:  5px 5px 15px #343030;
   border-radius: 5px;
+  max-height: 70px;
+}
+.App-header h1 {
+  width: 55%;
 }
 
 .App-main {
-  display:inline-block;
-  /* flex-direction: column; */
+  position: relative;
+  top: 80px;
+  display: inline-block;
   align-items: center;
-  /* justify-content: center; */
   width: 70%;
-  padding-left: 23%;
-  /* padding-right: 5px; */
 }
 
 a:hover {

@@ -4,7 +4,6 @@ import { getPostList,
          getChildren, 
          isLoading, 
          failedToLoad } from "./postListSlice";
-import { MarkdownBlock, MarkdownSpan, MarkdownElement } from "https://md-block.verou.me/md-block.js"
 import { Link, useParams } from 'react-router-dom';
 import './postList.css';
 
@@ -17,6 +16,7 @@ export function PostList() {
     const { subreddit } = useParams();
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         dispatch(getPostList(subreddit));
     }, [dispatch, subreddit]);
 
@@ -40,7 +40,7 @@ export function PostList() {
                         </h3>
                         <p>score: {post.data.score}</p>
                         <p><Link to={'/r/' + post.data.subreddit}>{post.data.subreddit_name_prefixed}</Link> • posted by: {`u\\${post.data.author}`}</p>
-                        <p><md-span>{post.data.selftext}</md-span></p>
+                        <p className='mdSpan'><md-span>{post.data.selftext}</md-span></p>
                         {post.data.is_video ? 
                             <video controls >
                                 <source src={post.data.media.reddit_video.fallback_url}
@@ -54,12 +54,19 @@ export function PostList() {
                         {post.data.secure_media_embed.content !== undefined? 
                             <iframe 
                                 src={post.data.secure_media_embed.media_domain_url}
-                                Height={post.data.secure_media_embed.height}
-                                Width={post.data.secure_media_embed.width}
-                                allowFullScreen='true'
-                                
+                                title={post.data.id}
+                                height={post.data.secure_media_embed.height}
+                                width={post.data.secure_media_embed.width}
+                                allowFullScreen={true}
                                 >
-                            </iframe> : ''}
+                            </iframe> 
+                            : ''}
+
+                        {post.data.post_hint === 'link'?
+                            <embed
+                                src={post.data.url}>
+                            </embed>
+                            : ''}
                     </div>
                 ))};
             </div>

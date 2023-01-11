@@ -1,26 +1,56 @@
 import React from "react";
-import { Routes, Router, Link } from 'react-router-dom';
 import './subReddits.css';
 
 export function SubReddits() {
+
+  const navigate = (e) => {
+    
+    window.location.href = `../r/${e.target.value}`;
+    window.scrollTo(0, 0);
+  }
+
   return(
-    <aside className='aside'>
-      <ul>
-        <li>
-        <Link to='/r/AgedLikeWine'>Aged Like Wine</Link></li>
-        <Link to='/r/AnimalsBeingGeniuses'><li>Animals Being Geniuses</li></Link>
-        <Link to='/r/Cats'><li>Cats</li></Link>
-        <Link to='/r/EyeBleach'><li>Eye Bleach</li></Link>
-        <Link to='/r/Futurology'><li>Futurology</li></Link>
-        <Link to='/r/Hmm'><li>Hmm</li></Link>
-        <Link to='/r/Pics'><li>Pics</li></Link>
-        <Link to='/r/LifeProTips'><li>Life Pro Tips</li></Link>
-        <Link to='/r/MadeMeSmile'><li>Made Me Smile</li></Link>
-        <Link to='/r/MildlyInteresting'><li>Mildly Interesting</li></Link>
-        <Link to='/r/Space'><li>Space</li></Link>
-        <Link to='/r/TodayILearned'><li>Today I Learned</li></Link>
-        <Link to='/r/UpLiftingNews'><li>Up Lifting News</li></Link>
-      </ul>
-    </aside>
+    <div className='subRedditsMenu'>
+      <select name="subreddit" id="subreddit-select" >
+          <option value=''>Select a Sub-Reddit</option>
+          <option value="Popular">Popular</option>
+          <option value="AgedLikeWine" onClick={navigate}>
+            Aged Like Wine
+          </option>
+          <option value="AnimalsBeingGeniuses" onClick={navigate}>
+            Animals Being Geniuses
+          </option>
+          <option value="CatsAreLiquid" onClick={navigate}>
+            Cats Are Liquid
+          </option>
+          <option value="EyeBleach" onClick={navigate}>
+            Eye Bleach
+          </option>
+          <option value="Futurology" onClick={navigate}>
+            Futurology
+          </option>
+          <option value="Pics" onClick={navigate}>
+            Pics
+          </option>
+          <option value="LifeProTips" onClick={navigate}>
+            Life Pro Tips
+          </option>
+          <option value="MadeMeSmile" onClick={navigate}>
+            Made Me Smile
+          </option>
+          <option value="MildlyInteresting" onClick={navigate}>
+            Mildly Interesting
+          </option>
+          <option value="Space" onClick={navigate}>
+            Space
+          </option>
+          <option value="TodayILearned" onClick={navigate}>
+            Today I Learned
+          </option>
+          <option value="UpLiftingNews" onClick={navigate}>
+            Up Lifting News
+          </option>
+      </select>
+    </div>
   );
 };

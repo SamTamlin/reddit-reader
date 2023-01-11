@@ -1,0 +1,14 @@
+.comments {
+    box-shadow:  5px 5px 15px #343030;
+    background-color: rgb(249, 249, 249);
+    padding-top: 0.5ch;
+    padding-left: 2ch;
+    padding-right: 2ch;
+    padding-bottom: 0.5ch;
+    margin-top: 1ch;
+    border-radius: 5px;  
+}
+
+strong {
+    color: red;
+}

@@ -10,10 +10,10 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
+          <SubReddits />
           <h1><Link to='/'>Reddit Reader</Link></h1>
         </header>
         <main className='App-main'>
-          <SubReddits />
           <Routes>
             <Route path='/'
                    element={<PostList />} />

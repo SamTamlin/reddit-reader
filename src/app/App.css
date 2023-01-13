@@ -12,8 +12,25 @@
   border-radius: 5px;
   max-height: 70px;
 }
+
+.App-header .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+}
+
 .App-header h1 {
-  width: 55%;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: x-large;
+  margin-left: 1ch;
+}
+
+.App-header img {
+  height: 33px;
+  margin-left: 1ch;
+  border-radius: 50%;
+  border: white solid 2px;
 }
 
 .App-main {
@@ -21,7 +38,7 @@
   top: 80px;
   display: inline-block;
   align-items: center;
-  width: 70%;
+  width: 80%;
 }
 
 a:hover {

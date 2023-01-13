@@ -1,0 +1,86 @@
+.itemPreview {
+  box-shadow:  5px 5px 15px #343030;
+  background-color: rgb(249, 249, 249);
+  margin-top: 3ch;
+  border-radius: 5px;
+  padding: 0ch 1ch;
+  display: flex;
+  justify-content: center;
+  min-width: 400px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.score {
+  padding: 1ch;
+}
+
+.score p {
+  padding: 0ch;
+  margin: 0ch;
+}
+
+.itemPreview h2 {
+  text-align: left;
+  font-size: small;
+  font-weight: 400;
+  margin-bottom: 0ch;
+}
+
+.itemPreview h3 {
+  text-align: left;
+  margin-top: 0.5ch;
+  margin-bottom: 0.5ch;
+  font-size:x-large;
+  font-weight: 500;
+}
+
+.itemPreview article {
+  width: 87%;
+  padding-right: 2ch;
+  padding-bottom: 2ch;
+  padding-left: 1ch;
+  min-width: 200px;
+}
+
+.itemPreview video, 
+.itemPreview img, 
+.itemPreview iframe {
+  border: #343030 solid 1px;
+  border-radius: 5px;
+  box-shadow:  1px 1px 5px #343030;
+  max-height: 60ch;
+  max-width: 100%;
+  align-self: center;
+  margin: 0 auto;
+}
+
+.itemPreview .mdSpan {
+  max-height: 50ch;
+  overflow-y: scroll;
+  text-align: left;
+  border-radius: 5px;
+  padding: 1ch 2ch;
+  box-shadow:  1px 1px 5px #343030;
+}
+
+.itemPreview .mdSpan a {
+  color: #0101cb;
+}
+
+.itemPreview .outsideLink, .outsideLink a {
+  text-align: left;
+  color: #0101cb
+}
+
+.itemPreview .outsideLink:hover{
+  color: gray;
+}
+
+.NSFW {
+  border: 3px solid #FF585B;
+  border-radius: 5px;
+  font-size: medium;
+  color:#FF585B
+}

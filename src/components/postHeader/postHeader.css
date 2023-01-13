@@ -1,23 +1,70 @@
 .postHeader {
     box-shadow:  5px 5px 15px #343030;
     background-color: rgb(249, 249, 249);
-    padding-top: 0.5ch;
-    padding-bottom: 2ch;
-    border-radius: 5px;  
+    margin-top: 3ch;
+    border-radius: 5px;
+    padding: 0ch 1ch;
+    display: flex;
+    justify-content: center;
+    min-width: 400px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.postHeader video, .postHeader img, .postHeader iframe {
+.score {
+    padding: 1ch;
+}
+
+.score p {
+    padding: 0ch;
+    margin: 0ch;
+}
+
+.postHeader h2 {
+    text-align: left;
+    font-size: small;
+    font-weight: 400;
+    margin-bottom: 0ch;
+}
+
+.postHeader h3 {
+    text-align: left;
+    margin-top: 0.5ch;
+    margin-bottom: 0.5ch;
+    font-size:x-large;
+    font-weight: 500;
+}
+
+.postHeader article {
+    width: 87%;
+    padding-right: 2ch;
+    padding-bottom: 2ch;
+    padding-left: 1ch;
+    min-width: 200px;
+}
+
+.postHeader video, 
+.postHeader img, 
+.postHeader iframe {
     border: #343030 solid 1px;
+    border-radius: 5px;
     box-shadow:  1px 1px 5px #343030;
-    margin: 1ch;
-    /* max-height: 70ch; */
+    max-height: 60ch;
     max-width: 90%;
-    border-radius: 10px;
+    align-self: center;
+    margin: 0 auto;
+}
+
+.postHeader embed {
+    height: 65ch;
+    width: 90%;
 }
 
 .postHeader .mdSpan {
-    max-height: 50ch;
+    /* max-height: 50ch; */
     overflow-y: scroll;
+    padding: 0ch 4ch;
   }
   
 .NSFW {

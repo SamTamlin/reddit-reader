@@ -3,60 +3,10 @@
   flex-direction: column;
   box-shadow:  3px 3px 10px #343030;
   background-color: rgb(249, 249, 249);
-  padding: 1ch;
+  padding: 1ch 1ch;
   margin-top: 1.5ch;
   border-radius: 5px;
-}
-
-.itemPreview {
-  box-shadow:  5px 5px 15px #343030;
-  background-color: rgb(249, 249, 249);
-  padding-top: 1ch;
-  padding-left: 4ch;
-  padding-right: 4ch;
-  padding-bottom: 2ch;
-  margin-top: 3ch;
-  border-radius: 5px;
-  }
-
-.itemPreview video, 
-.itemPreview img, 
-.itemPreview iframe {
-  border: #343030 solid 1px;
-  border-radius: 5px;
-  box-shadow:  1px 1px 5px #343030;
-  margin: 1ch;
-  max-height: 60ch;
-  max-width: 100%;
-  object-fit: scale-down;
-}
-
-.itemPreview iframe {
-  border: #343030 solid 1px;
-  border-radius: 5px;
-  box-shadow:  1px 1px 5px #343030;
-  margin: 1ch;
-  /* max-height: 60ch; */
-  max-width: 100%;
-  object-fit: scale-down;
-}
-
-.itemPreview embed {
-  height: 40ch;
-  width: 100%;
-  border-radius: 5px;
-  box-shadow:  1px 1px 5px #343030;
-}
-
-.itemPreview .mdSpan {
-  max-height: 50ch;
-  overflow-y: scroll;
-  border-radius: 5px;
-  padding: 0px 20px;
-  box-shadow:  1px 1px 5px #343030;
-}
-
-.NSFW {
-  border:1px solid #FF585B;
-  color:#FF585B
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }

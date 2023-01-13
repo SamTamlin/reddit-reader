@@ -5,7 +5,7 @@ export function SubReddits() {
 
   const navigate = (e) => {
     
-    window.location.href = `../r/${e.target.value}`;
+    window.location.href = `/r/${e.target.value}`;
     window.scrollTo(0, 0);
   }
 
@@ -13,7 +13,9 @@ export function SubReddits() {
     <div className='subRedditsMenu'>
       <select name="subreddit" id="subreddit-select" >
           <option value=''>Select a Sub-Reddit</option>
-          <option value="Popular">Popular</option>
+          <option value="Popular" onClick={navigate}>
+            Popular
+          </option>
           <option value="AgedLikeWine" onClick={navigate}>
             Aged Like Wine
           </option>
@@ -54,3 +56,5 @@ export function SubReddits() {
     </div>
   );
 };
+
+export default SubReddits;

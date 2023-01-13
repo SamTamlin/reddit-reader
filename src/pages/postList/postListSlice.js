@@ -36,7 +36,7 @@ export const postListSlice = createSlice({
 });
 
 export const getChildren = state => state.postList.postList.children;
-export const isLoading = state => state.postList.isLoadingPostList;
+export const isLoadingPostList = state => state.postList.isLoadingPostList;
 export const failedToLoad = state => state.postList.failedToLoadPostList;
 
 export default postListSlice.reducer;

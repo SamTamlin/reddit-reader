@@ -1,9 +1,12 @@
 .subRedditsMenu {
-  /* border: black 2px solid; */
-  padding: 1.5ch 0ch;
+  width: 30%;
+  min-width: 170px;
+}
+
+#subreddit-select {
+  background-color:rgb(215, 215, 215);
+  border: gray solid 2px;
   border-radius: 5px;
-  justify-self:right;
-  width: 20%;
-  margin: 1ch;
+  text-align: center;
 }
 

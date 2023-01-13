@@ -1,4 +1,6 @@
-import React from "react";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
 import './postComment.css'
 
 export function PostComment(comment, key) {
@@ -6,10 +8,12 @@ export function PostComment(comment, key) {
         <div className='comments' 
                 key={key}>
             <p>
-                {comment.data.data.author} 
-                {comment.data.data.is_submitter ? <strong> Original Poster</strong> : ''}
+                <strong>u/{comment.data.data.author} </strong>
+                {comment.data.data.is_submitter ? <strong id='op'> Original Poster</strong> : ''}
             </p>
-            <p>{comment.data.data.body}</p>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {comment.data.data.body}
+            </ReactMarkdown>
         </div>
     )
 }

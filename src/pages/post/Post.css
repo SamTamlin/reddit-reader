@@ -1,19 +1,23 @@
 .postTitle {
-  box-shadow:  3px 3px 10px #343030;
+  box-shadow:  5px 5px 15px #343030;
   background-color: rgb(249, 249, 249);
   padding: 1ch;
   margin-top: 1.5ch;
-  /* margin-left: 6.75ch; */
   border-radius: 5px; 
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .commentTitle {
   box-shadow:  5px 5px 15px #343030;
   background-color: rgb(249, 249, 249);
-  padding-top: 1ch;
-  padding-bottom: 1ch;
+  padding: 1ch;
   margin-top: 4ch;
   border-radius: 5px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
   

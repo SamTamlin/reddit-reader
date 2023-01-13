@@ -21,6 +21,7 @@ export function Post() {
 
     
     useEffect(() => {
+        window.scrollTo(0, 0);
         dispatch(getPost({
             subreddit: subreddit,
             id: id,
@@ -28,13 +29,19 @@ export function Post() {
         }));
     }, [dispatch, subreddit, id, postLink]);
 
-    loadingPost ?
-        <p>Please Wait</p> :
-        <p></p>;
+    if(loadingPost) {
+        return <p>Please Wait</p>;
+    }
 
-    failedLoadPost ?
-        <p>Sorry failed to load, please retry</p> :
-        <p></p>;
+    if(failedLoadPost) {
+        return(
+            <div>
+                <p>Sorry failed to load</p>
+                <p>please retry</p>
+            </div>
+            
+        )
+    }
 
     if(header !== undefined) {
         return (

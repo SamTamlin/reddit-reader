@@ -1,26 +1,46 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+
 import './postHeader.css'
 
 export function PostHeader(header) {
+    const posted = new Date(header.data.created_utc*1000);
+    // create date and time of when the post was created
+    const datePosted = posted.toLocaleString(
+        'en-GB', 
+        { 
+            hour12: true,
+            weekday: 'short',
+            month: 'short',
+            year: '2-digit',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit',
+        });
 
     return(
-        <div className='postHeader' 
-                key={header.data.id}>
+        <div className='postHeader' key={header.data.id}>
             <aside className='score'>
-                <p>score:</p>
+                <p>points:</p>
                 <p>{header.data.score}</p>
             </aside>
+
             <article>
-                <h2>posted by: {`u\\${header.data.author}`}</h2>
+                {/* Post Header */}
+                <h2>
+                    <strong>posted by {`u\\${header.data.author}`}</strong> {datePosted}
+                </h2>
+
                 <h3>
                     {header.data.title} {header.data.thumbnail === 'nsfw'?
                         <span className='NSFW'>nsfw</span>
                         : ''}
                 </h3>
+
+                {/* each post contains some media but not every sort  */}
                 {header.data.selftext !== '' ?
-                    <p className="mdSpan">
+                    <p className="markDown">
                         <ReactMarkdown remarkPlugins={[remarkGfm]}>
                             {header.data.selftext}
                         </ReactMarkdown>
@@ -52,7 +72,6 @@ export function PostHeader(header) {
                     </iframe> 
                     : ''}
             </article>
-
         </div>
-    )
-}
+    );
+};

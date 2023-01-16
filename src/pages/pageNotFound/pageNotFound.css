@@ -1,0 +1,12 @@
+.notFound p {
+    font-weight: 800;
+    font-size: x-large;
+}
+
+#top {
+    margin-top: 4ch;
+}
+
+.notFound img {
+    margin: 4ch;
+}

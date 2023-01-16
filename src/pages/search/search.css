@@ -1,0 +1,12 @@
+.searchTitle {
+    display: flex;
+    flex-direction: column;
+    box-shadow:  3px 3px 10px #343030;
+    background-color: rgb(249, 249, 249);
+    padding: 1ch 1ch;
+    margin-top: 1.5ch;
+    border-radius: 5px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}

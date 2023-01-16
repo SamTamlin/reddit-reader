@@ -1,22 +1,25 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getSearch,
-         getSearchChildren, 
-         isLoading, 
-         failedToLoad } from "./searchSlice";
-import { ItemPreview } from "../../components/itemPreview/ItemPreview";
 import { useParams } from "react-router-dom";
+
+import { ItemPreview } from "../../components/itemPreview/ItemPreview";
+import { Loading } from "../loading/Loading";
+import { PageNotFound } from "../pageNotFound/PageNotFound";
+
+import { getSearch,
+    getSearchChildren, 
+    isLoading, 
+    failedToLoad } from "./searchSlice";
+
 import './search.css';
 
 export function Search() {
     const dispatch = useDispatch();
-
     const searchChildren = useSelector(getSearchChildren);
     const loadingSearch = useSelector(isLoading);
     const failedSearch = useSelector(failedToLoad);
 
     const {search} = useParams();
-    // const [path, search] = searchPath.split('?');
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -24,8 +27,13 @@ export function Search() {
         dispatch(getSearch(search));
     }, [dispatch, search]);
     
-    loadingSearch ? <p>Please Wait</p> : <p></p>;
-    failedSearch ? <p>Sorry faild to load</p> : <p></p>;
+    if(loadingSearch) {
+        return <Loading />
+    };
+
+    if(failedSearch) {
+        return <PageNotFound />
+    };
 
     if(searchChildren !== undefined) {
         return (
@@ -33,12 +41,12 @@ export function Search() {
                 <h2 className='searchTitle'>
                     Search Results
                 </h2>
-                {searchChildren.map((post, key) => (
-                    <ItemPreview data={post} key={key} />
+                {searchChildren.map((post, index) => (
+                    <ItemPreview data={post.data} key={index} />
                 ))};
             </div>
         )
-    }
+    };
 };
 
 export default Search;

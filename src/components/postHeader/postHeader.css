@@ -3,7 +3,7 @@
     background-color: rgb(249, 249, 249);
     margin-top: 3ch;
     border-radius: 5px;
-    padding: 0ch 1ch;
+    padding: 0ch 2ch;
     display: flex;
     justify-content: center;
     min-width: 400px;
@@ -61,8 +61,8 @@
     width: 90%;
 }
 
-.postHeader .mdSpan {
-    /* max-height: 50ch; */
+.postHeader .markDown {
+    text-align: left;
     overflow-y: scroll;
     padding: 0ch 4ch;
   }

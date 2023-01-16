@@ -2,6 +2,7 @@
   box-shadow:  5px 5px 15px #343030;
   background-color: rgb(249, 249, 249);
   margin-top: 3ch;
+  margin-bottom: 0ch;
   border-radius: 5px;
   padding: 0ch 1ch;
   display: flex;
@@ -10,10 +11,6 @@
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.score {
-  padding: 1ch;
 }
 
 .score p {
@@ -56,7 +53,7 @@
   margin: 0 auto;
 }
 
-.itemPreview .mdSpan {
+.itemPreview .markDown {
   max-height: 50ch;
   overflow-y: scroll;
   text-align: left;
@@ -65,7 +62,7 @@
   box-shadow:  1px 1px 5px #343030;
 }
 
-.itemPreview .mdSpan a {
+.itemPreview .markDown a {
   color: #0101cb;
 }
 
@@ -83,4 +80,9 @@
   border-radius: 5px;
   font-size: medium;
   color:#FF585B
+}
+
+.commentNumber {
+  text-align: left;
+  margin-bottom: 0px;
 }

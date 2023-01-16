@@ -22,6 +22,9 @@ export function SubReddits() {
           <option value="AnimalsBeingGeniuses" onClick={navigate}>
             Animals Being Geniuses
           </option>
+          <option value='BeAmazed' onClick={navigate}>
+            Be Amazed
+          </option>
           <option value="CatsAreLiquid" onClick={navigate}>
             Cats Are Liquid
           </option>
@@ -30,6 +33,9 @@ export function SubReddits() {
           </option>
           <option value="Futurology" onClick={navigate}>
             Futurology
+          </option>
+          <option value='GooglyEyes' onClick={navigate}>
+            Googly Eyes
           </option>
           <option value="Pics" onClick={navigate}>
             Pics
@@ -43,6 +49,12 @@ export function SubReddits() {
           <option value="MildlyInteresting" onClick={navigate}>
             Mildly Interesting
           </option>
+          <option value='NeverTellMeTheOdds' onClick={navigate}>
+            Never Tell Me The Odds
+          </option>
+          <option value='NotTheOnion' onClick={navigate}>
+            Not the Onion
+          </option>
           <option value="Space" onClick={navigate}>
             Space
           </option>
@@ -50,7 +62,7 @@ export function SubReddits() {
             Today I Learned
           </option>
           <option value="UpLiftingNews" onClick={navigate}>
-            Up Lifting News
+            Up-Lifting News
           </option>
       </select>
     </div>

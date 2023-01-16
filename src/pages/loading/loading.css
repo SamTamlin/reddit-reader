@@ -1,0 +1,26 @@
+.loading p {
+    font-weight: 800;
+    font-size: x-large;
+}
+
+#top {
+    margin-top: 4ch;
+}
+
+.loading img {
+    margin: 4ch;
+}
+
+#rotate{
+    animation: rotation infinite 2s linear;
+}
+
+@keyframes rotation{
+    from{
+      transform:rotate(0deg);
+    }
+  
+    to{
+      transform:rotate(360deg);
+    }
+}

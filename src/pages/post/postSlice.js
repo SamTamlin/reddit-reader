@@ -7,7 +7,7 @@ export const getPost = createAsyncThunk(
             `https://www.reddit.com/r/${params.subreddit}/comments/${params.id}/${params.postLink}.json`);
         const json = await response.json();
         return json;
-    }
+    },
 );
 
 export const postSlice = createSlice({

@@ -1,13 +1,14 @@
 .searchDiv {
     width: 30%;
     min-width: 170px;
-    
 }
 
 input::placeholder {
     color: black;
+    text-align: center; 
+
+    /* required for firefox */
     opacity: 1;
-    text-align: center;
 }
 
 .searchDiv input, button {

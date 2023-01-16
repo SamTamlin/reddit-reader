@@ -1,14 +1,20 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
+
+import { Loading } from '../loading/Loading';
+import { PageNotFound } from "../pageNotFound/PageNotFound";
+
+import { PostHeader } from "../../components/postHeader/PostHeader";
+import { PostComment } from "../../components/postComment/PostComment";
+
 import { getPost, 
          getHeader, 
          getComments, 
          isLoadingPost,  
          failedToLoadPost} from './postSlice';
-import { Link, useParams } from 'react-router-dom';
+
 import './Post.css';
-import { PostHeader } from "../../components/postHeader/PostHeader";
-import { PostComment } from "../../components/postComment/PostComment";
 
 export function Post() {
     const dispatch = useDispatch();
@@ -17,8 +23,8 @@ export function Post() {
     const userComments = useSelector(getComments);
     const loadingPost = useSelector(isLoadingPost);
     const failedLoadPost = useSelector(failedToLoadPost)
+    
     const { subreddit, id, postLink } = useParams();
-
     
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -30,18 +36,12 @@ export function Post() {
     }, [dispatch, subreddit, id, postLink]);
 
     if(loadingPost) {
-        return <p>Please Wait</p>;
-    }
-
+        return <Loading />
+    }; 
+    
     if(failedLoadPost) {
-        return(
-            <div>
-                <p>Sorry failed to load</p>
-                <p>please retry</p>
-            </div>
-            
-        )
-    }
+        return <PageNotFound />
+    };
 
     if(header !== undefined) {
         return (
@@ -49,19 +49,24 @@ export function Post() {
                 <h2 className='postTitle'>
                     {subreddit ? 
                     <Link to={`/r/${header.children[0].data.subreddit}`}>
-                        Subreddit: {subreddit}
-                    </Link> : 
-                    'Failed to Load'}
+                        r/{subreddit}
+                    </Link>
+                    : ''}
                 </h2>
+
                 <PostHeader data={header.children[0].data} />
                 
                 <h3 className='commentTitle'>Comments</h3>
-                {userComments.children.map((comment, key) => (
-                    <PostComment data={comment} key={key} />
-                    ))}
+                
+                {userComments.children.map((comment, index) => (
+                    <PostComment 
+                        data={comment.data} 
+                        key={index}
+                    />
+                ))}
             </div>
         )
-    }
+    };
 };
 
 export default Post;

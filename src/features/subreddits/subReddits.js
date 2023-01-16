@@ -4,9 +4,9 @@ import './subReddits.css';
 export function SubReddits() {
 
   const navigate = (e) => {
-    
     window.location.href = `/r/${e.target.value}`;
     window.scrollTo(0, 0);
+    return false;
   }
 
   return(

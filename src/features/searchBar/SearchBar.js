@@ -1,19 +1,21 @@
-import React from "react";
-
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './searchBar.css';
 
 export function SearchBar() {
+    const navigate = useNavigate();
+    // declare searchString as let allowing manipulation by handleInput
     let searchString = '';
     
     const handleInput = (e) => {
         const enteredSearch = e.target.value;
         // replace with '+' so that the json returns the correct search
         searchString = enteredSearch.replaceAll(' ', '+');
+        console.log(searchString);
     };
 
     const startSearch = () => {
-        window.location.href = `${searchString}`;
-        window.scrollTo(0, 0);
+        navigate(`/${searchString}`);
     };
 
     return(
